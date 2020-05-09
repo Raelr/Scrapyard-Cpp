@@ -1,17 +1,6 @@
-
-
-#include "HelloTriangle/HelloTriangleApplication.h"
-#include "Scrapyard/Test.h"
-
-#include <iostream>
+#include "Scrapyard.h"
 
 int main() {
-
-    Scrapyard::print();
-
-    HelloTriangleApplication app;
-
-    app.run();
 
     return 0;
 }
