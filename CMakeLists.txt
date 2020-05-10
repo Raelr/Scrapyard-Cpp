@@ -11,7 +11,7 @@ find_package(glfw3 3.2 REQUIRED)
 find_package(glm REQUIRED)
 include_directories(${GLFW_INCLUDE_DIRS})
 
-add_executable(VulkanPractice main.cpp)
+add_executable(VulkanPractice Scrapyard/src/Scrapyard/Entrypoint.h)
 
 target_include_directories(VulkanPractice PUBLIC "${PROJECT_BINARY_DIR}" Scrapyard Sandbox)
 target_link_libraries(VulkanPractice glfw ${GLFW_LIBRARIES} Vulkan::Vulkan Scrapyard Sandbox)
