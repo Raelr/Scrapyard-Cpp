@@ -16,6 +16,9 @@ namespace Scrapyard {
         ~Application();
         void run();
     };
+
+    // To be defined in CLIENT.
+    Application* CreateApplication();
 }
 
 

@@ -11,3 +11,7 @@ SandboxApp::SandboxApp() {
 SandboxApp::~SandboxApp() {
 
 }
+
+Scrapyard::Application * Scrapyard::CreateApplication() {
+    return new SandboxApp;
+}
