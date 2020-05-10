@@ -5,6 +5,8 @@
 #ifndef VULKANPRACTICE_APPLICATION_H
 #define VULKANPRACTICE_APPLICATION_H
 
+#include "stdio.h"
+
 namespace Scrapyard {
 
     class Application {
@@ -15,6 +17,7 @@ namespace Scrapyard {
         void run();
     };
 }
+
 
 
 

@@ -6,7 +6,6 @@
 #define VULKANPRACTICE_SCRAPYARD_H
 
 // For use by applications.
-
 #include "Scrapyard/Application.h"
 
 #endif //VULKANPRACTICE_SCRAPYARD_H

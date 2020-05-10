@@ -5,7 +5,7 @@
 #ifndef VULKANPRACTICE_SANDBOXAPP_H
 #define VULKANPRACTICE_SANDBOXAPP_H
 
-#include "../../Scrapyard/src/Scrapyard.h"
+#include "src/Scrapyard.h"
 
 class SandboxApp {
 

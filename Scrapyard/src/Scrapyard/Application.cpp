@@ -15,7 +15,7 @@ namespace Scrapyard {
     }
 
     void Application::run() {
-
+        printf("Started Scrapyard");
     }
-}
 
+}
