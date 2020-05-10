@@ -5,10 +5,13 @@
 #ifndef VULKANPRACTICE_SANDBOXAPP_H
 #define VULKANPRACTICE_SANDBOXAPP_H
 
-#include "src/Scrapyard.h"
+#include "Scrapyard.h"
 
-class SandboxApp {
+class SandboxApp : public Scrapyard::Application {
 
+public:
+    SandboxApp();
+    ~SandboxApp();
 };
 
 

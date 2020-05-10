@@ -1,7 +1,8 @@
-#include <src/Scrapyard.h>
+#include "Sandbox.h"
 
 int main() {
-    auto app = Scrapyard::Application();
-    app.run();
+    auto* app = new SandboxApp;
+    app->run();
+    delete app;
     return 0;
 }
