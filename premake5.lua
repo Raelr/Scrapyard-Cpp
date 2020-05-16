@@ -2,7 +2,8 @@ workspace "Scrapyard-C"
    architecture "x64"
     configurations { 
        "Debug", 
-       "Release"
+       "Release",
+       "Dist"
    }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
@@ -28,8 +29,16 @@ project "Scrapyard"
    }
 
    filter "configurations:Debug"
-      defines { "DEBUG" }
+      defines { "SCY_DEBUG" }
       symbols "On"
+
+   filter "configurations:Release"
+      defines { "SCY_RELEASE" }
+      optimize "On"
+   
+   filter "configurations:Dist"
+      defines { "SCY_DIST" }
+      optimize "On"
    
    filter "system:macosx"
       systemversion "latest"
