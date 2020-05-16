@@ -1,7 +1,3 @@
-//
-// Created by Aryeh Zinn on 10/5/20.
-//
-
 #include "Application.h"
 
 namespace Scrapyard {
@@ -15,7 +11,6 @@ namespace Scrapyard {
     }
 
     void Application::run() {
-        printf("Started Scrapyard");
         while(true);
     }
 

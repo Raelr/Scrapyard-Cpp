@@ -1,11 +1,5 @@
-//
-// Created by Aryeh Zinn on 10/5/20.
-//
-
-#ifndef VULKANPRACTICE_APPLICATION_H
-#define VULKANPRACTICE_APPLICATION_H
-
-#include "stdio.h"
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
 namespace Scrapyard {
 
@@ -24,4 +18,4 @@ namespace Scrapyard {
 
 
 
-#endif //VULKANPRACTICE_APPLICATION_H
+#endif

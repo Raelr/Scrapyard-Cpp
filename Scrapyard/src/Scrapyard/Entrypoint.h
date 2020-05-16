@@ -1,11 +1,8 @@
-//
-// Created by Aryeh Zinn on 11/5/20.
-//
+#ifndef ENTRYPOINT_H
+#define ENTRYPOINT_H
+#include "Core.h"
 
-#ifndef VULKANPRACTICE_ENTRYPOINT_H
-#define VULKANPRACTICE_ENTRYPOINT_H
-
-#ifdef __APPLE__
+#ifdef SCY_PLATFORM_MACOS
 
 #include <spdlog/spdlog.h>
 
@@ -25,4 +22,4 @@ int main(int argc, char** argv) {
 
 #endif
 
-#endif //VULKANPRACTICE_ENTRYPOINT_H
+#endif
