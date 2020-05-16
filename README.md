@@ -23,7 +23,7 @@ Premake allows you to build the project for a range of IDEs and build systems. F
 To start, lets run the premake command from the project directory:
 
 ```
-premake/premake5 gmake2
+$ premake/premake5 gmake2
 ```
 
 This command will generate a set of makefiles across the project which should handle the build process for us. To actually build the project, run the following terminal commmand:
@@ -110,7 +110,7 @@ The project should now be successfully built!
 You can use premake to generate xcode files so that you can run it within the Xcode IDE. To do that, just run the premake command using the `xcode4` parameter:
 
 ```
-premake/premake5 xcode4
+$ premake/premake5 xcode4
 ```
 
 This should generate the project files for xcode!
