@@ -1,17 +1,23 @@
-//
-// Created by Aryeh Zinn on 10/5/20.
-//
+#include <Scrapyard.h>
 
-#include "SandboxApp.h"
+class SandBoxApp : public Scrapyard::Application {
+    
+public: 
+    SandBoxApp() {
 
-SandboxApp::SandboxApp() {
+    }
 
-}
+    ~SandBoxApp() {
 
-SandboxApp::~SandboxApp() {
+    }
+};
 
-}
 
 Scrapyard::Application * Scrapyard::CreateApplication() {
-    return new SandboxApp;
+    return new SandBoxApp;
 }
+
+
+
+
+
