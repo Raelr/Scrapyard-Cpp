@@ -11,10 +11,15 @@ int main(int argc, char** argv) {
     Scrapyard::Log::init();
 
     SCY_CORE_TRACE("Starting Scrapyard...");
+    
     auto* app = Scrapyard::CreateApplication();
-    SCY_CORE_TRACE("Running Scrapyard...");
+    
+    SCY_CORE_INFO("Running Scrapyard...");
+    
     app->run();
+
     SCY_INFO("Scrapyard is running!");
+    
     delete app;
 
     return 0;

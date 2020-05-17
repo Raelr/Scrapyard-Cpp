@@ -6,3 +6,5 @@
     #endif
 
 #endif
+
+#define BIT(x) (1 << x)
