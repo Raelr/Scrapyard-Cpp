@@ -4,17 +4,16 @@
 
 #ifdef SCY_PLATFORM_MACOS
 
-#include <spdlog/spdlog.h>
-
 extern Scrapyard::Application* Scrapyard::CreateApplication();
 
 int main(int argc, char** argv) {
 
-    spdlog::info("Running Scrapyard with MacOSX build");
+    Scrapyard::Log::init();
+    Scrapyard::Log::GetCoreLogger()->warn("Initialised log!");
+    Scrapyard::Log::GetClientLogger()->info("Hello!");
+
     auto* app = Scrapyard::CreateApplication();
-    spdlog::info("Running Scrapyard...");
     app->run();
-    spdlog::info("Closing Scrapyard");
     delete app;
 
     return 0;

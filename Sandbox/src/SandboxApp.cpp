@@ -14,7 +14,7 @@ public:
 
 
 Scrapyard::Application * Scrapyard::CreateApplication() {
-    return new SandBoxApp;
+    return new SandBoxApp();
 }
 
 

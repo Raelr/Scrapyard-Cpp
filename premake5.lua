@@ -12,19 +12,19 @@ project "Scrapyard"
    location "Scrapyard"
    kind "StaticLib"
    language "C++"
-   targetdir ""
+   cppdialect "C++17"
 
    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
    files {
       "%{prj.name}/src/**.cpp",
-      "%{prj.name}/Scrapyard.h",
-      "%{prj.name}/src/**.h"
+      "%{prj.name}/src/**.h",
+      "%{prj.name}/**.h"
    }
 
    includedirs {
-      "%{prj.name}/src",
+      "%{prj.name}",
       "%{prj.name}/libs/spdlog/include"
    }
 
@@ -54,7 +54,7 @@ project "Sandbox"
 
    files {
       "%{prj.name}/src/**.cpp",
-      "%{prj.name}/src/**.h"
+      "%{prj.name}/src/**.h",
    }
 
    includedirs {

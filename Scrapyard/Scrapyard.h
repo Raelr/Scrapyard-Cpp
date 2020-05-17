@@ -4,6 +4,8 @@
 // For use by applications.
 #include "src/Scrapyard/Application.h"
 
+#include "src/Scrapyard/Log.h"
+
 // ------------ ENTRY POINT -----------
 
 #include "src/Scrapyard/Entrypoint.h"
