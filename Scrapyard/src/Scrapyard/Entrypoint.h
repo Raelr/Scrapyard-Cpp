@@ -9,11 +9,12 @@ extern Scrapyard::Application* Scrapyard::CreateApplication();
 int main(int argc, char** argv) {
 
     Scrapyard::Log::init();
-    Scrapyard::Log::GetCoreLogger()->warn("Initialised log!");
-    Scrapyard::Log::GetClientLogger()->info("Hello!");
 
+    SCY_CORE_TRACE("Starting Scrapyard...");
     auto* app = Scrapyard::CreateApplication();
+    SCY_CORE_TRACE("Running Scrapyard...");
     app->run();
+    SCY_INFO("Scrapyard is running!");
     delete app;
 
     return 0;
