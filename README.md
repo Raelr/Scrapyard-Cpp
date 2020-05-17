@@ -1,8 +1,8 @@
 # SCRAPYARD-C
 
-Scrapyard-C is intended to be a small 2D game engine written in C++. The purpose of the project is to both learn C++ and build up knowledge on how game engines can be designed. The engine in question is going to be based off TheCherno's game engine [Hazel](https://github.com/TheCherno/Hazel). The primary difference is that I aim to try and handle all rendering using [Vulkan](https://www.khronos.org/vulkan/), rather than OpenGL. As such I'll be following most of the architecture laid out by Hazel, but will be branching off on my own once the rendering stage has been reached. 
+Scrapyard-C is intended to be a small 2D game engine written in C++. The purpose of the project is to both learn C++ and build up knowledge on how game engines can be designed. The engine in question is going to be based off TheCherno's game engine: [Hazel](https://github.com/TheCherno/Hazel). The primary difference is that I aim to try and handle all rendering using [Vulkan](https://www.khronos.org/vulkan/), rather than OpenGL. As such I'll be following most of the architecture laid out by Hazel, but will be branching off on my own once the rendering stage has been reached. 
 
-Scrapyard is intended to be a tool for learning Vulkan and C++, it is NOT intended to be used further than this. Scrapyard-C is also intended to be the C++ version of [Scrapyard](https://github.com/Raelr/scrapyard_engine) which was written in Rust. The intention is to use Scrapyard-C as a learning tool to hopefully allow further development of the Rust-based engine. 
+Scrapyard is intended to be a learning exercise, it is NOT intended to be used further than this. Scrapyard-C is also intended to be the C++ version of [Scrapyard](https://github.com/Raelr/scrapyard_engine) which was written in Rust. The intention is to use Scrapyard-C as a learning tool to hopefully allow further development of the Rust-based engine. 
  
 ## Current State:
 
