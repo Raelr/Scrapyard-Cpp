@@ -26,7 +26,7 @@ namespace Scrapyard {
 #define SCY_CORE_ERROR(...) ::Scrapyard::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define SCY_CORE_FATAL(...) ::Scrapyard::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
-// Client loggin macros
+// Client logging macros
 
 #define SCY_TRACE(...) ::Scrapyard::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define SCY_INFO(...)  ::Scrapyard::Log::GetClientLogger()->info(__VA_ARGS__)
