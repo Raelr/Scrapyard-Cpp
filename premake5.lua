@@ -20,11 +20,10 @@ project "Scrapyard"
    files {
       "%{prj.name}/src/**.cpp",
       "%{prj.name}/src/**.h",
-      "%{prj.name}/**.h"
    }
 
    includedirs {
-      "%{prj.name}",
+      "%{prj.name}/src",
       "%{prj.name}/libs/spdlog/include"
    }
 
@@ -58,7 +57,7 @@ project "Sandbox"
    }
 
    includedirs {
-      "Scrapyard",
+      "Scrapyard/src/",
       "Scrapyard/libs/spdlog/include"
    }
 

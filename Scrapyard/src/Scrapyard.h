@@ -2,13 +2,13 @@
 #define SCRAPYARD_H
 
 // For use by applications.
-#include "src/Scrapyard/Application.h"
+#include "Scrapyard/Application.h"
 
-#include "src/Scrapyard/Log.h"
+#include "Scrapyard/Log.h"
 
 // ------------ ENTRY POINT -----------
 
-#include "src/Scrapyard/Entrypoint.h"
+#include "Scrapyard/Entrypoint.h"
 
 // ------------------------------------
 

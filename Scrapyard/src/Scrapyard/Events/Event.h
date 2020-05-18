@@ -18,7 +18,7 @@ enum class EventType {
 };
 
 // Macro for getting and comparing static types. 
-#define E_CLASS_TYPE(type)  static EventType getstaticType() {return EventType::##type; } \
+#define E_CLASS_TYPE(type)  static EventType getStaticType() {return EventType::##type; } \
                             virtual EventType getEventType() const override { return GetStaticType(); } \
                             virtual const char* getName() const override { return #type; }
 
@@ -50,16 +50,33 @@ class Event {
             return getCategoryFlags() & category;
         }
     protected:
-        bool m_handled = false;
+        bool m_Handled = false;
 };
 
-
-
+// Disaptcher for all events. 
 class EventDispatcher {
 
-
-
+    template<typename T>
+    using eventFn = std::function<bool(T&)>;
+    public: 
+        EventDispatcher(Event& event)
+                : m_Event{event} { }
+        
+        template<typename T>
+        bool dispatch(EventFn<T> func) {
+            if (m_Event.getEventType() == T::getStaticType()) {
+                m_Event.m_Handled = func(*(T*)&m_Event);
+                return true;
+            }
+            return false;
+        }
+    private:
+        Event& m_Event
 };
+
+inline std::ostream& operator<<(std::ostream& os, const Event& e) {
+    return os << e.toString();
+}
 
 }
 
