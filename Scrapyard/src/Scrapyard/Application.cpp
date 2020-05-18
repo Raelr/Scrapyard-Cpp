@@ -1,4 +1,6 @@
 #include "Application.h"
+#include "Events/AppEvent.h"
+#include "Log.h"
 
 namespace Scrapyard {
 
@@ -11,7 +13,8 @@ namespace Scrapyard {
     }
 
     void Application::run() {
-        while(true);
+        WindowResizeEvent e(1920, 1080);
+        SCY_TRACE(e);
     }
 
 }
