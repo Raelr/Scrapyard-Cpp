@@ -1,3 +1,4 @@
+#include "scypch.h"
 #include "Application.h"
 #include "Events/AppEvent.h"
 #include "Log.h"

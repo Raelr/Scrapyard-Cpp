@@ -15,7 +15,10 @@ project "Scrapyard"
    cppdialect "C++17"
 
    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+   
+   pchheader "scypch.h"
+   pchsource "Scrapyard/src/scypch.cpp"
 
    files {
       "%{prj.name}/src/**.cpp",

@@ -2,8 +2,6 @@
 #define APPEVENT_H
 
 #include "Event.h"
-#include <sstream>
-#include <string>
 
 namespace Scrapyard {
 

@@ -2,8 +2,6 @@
 #define EVENT_H
 
 #include "Scrapyard/Core.h"
-#include <string>
-#include <functional>
 
 namespace Scrapyard {
 
