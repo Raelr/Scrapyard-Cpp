@@ -1,6 +1,3 @@
 [submodule "Scrapyard/libs/spdlog"]
 	path = Scrapyard/libs/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "Scrapyard/libs/GLFW"]
-	path = Scrapyard/libs/GLFW
-	url = https://github.com/Raelr/glfw
