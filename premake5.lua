@@ -9,7 +9,7 @@ workspace "Scrapyard-C"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Scrapyard/libs/GLFW/include"
+IncludeDir["GLFW"] = "Scrapyard/libs/GLFW/GLFW/include"
 include "Scrapyard/libs/GLFW"
     
 project "Scrapyard"
