@@ -7,6 +7,10 @@ workspace "Scrapyard-C"
    }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "Scrapyard/libs/GLFW/include"
+include "Scrapyard/libs/GLFW"
     
 project "Scrapyard"
    location "Scrapyard"
@@ -27,7 +31,12 @@ project "Scrapyard"
 
    includedirs {
       "%{prj.name}/src",
-      "%{prj.name}/libs/spdlog/include"
+      "%{prj.name}/libs/spdlog/include",
+      "%{IncludeDir.GLFW}"
+   }
+
+   links {
+      "GLFW"
    }
 
    filter "configurations:Debug"
