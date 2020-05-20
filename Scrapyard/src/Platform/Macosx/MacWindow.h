@@ -22,10 +22,10 @@ namespace Scrapyard {
             virtual void isVsync() const override;
         private:
 
-            virtual void Init(const Properties& props);
-            virtual void Shutdown();
+            virtual void init(const Properties& props);
+            virtual void shutdown();
 
-            GLFWwindow* window;
+            GLFWwindow* m_window;
 
             struct Data {
 
@@ -34,10 +34,10 @@ namespace Scrapyard {
                 bool isVsync;
 
                 EventCallbackFn callback;
-            }
+            };
 
-            Data m_Data;
-    }
+            Data m_data;
+    };
 
 }
 

@@ -1,9 +1,9 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include <scypch.h>
-#include <Core.h>
-#include <Events/Event.h>
+#include "scypch.h"
+#include "Core.h"
+#include "Events/Event.h"
 
 namespace Scrapyard {
 
