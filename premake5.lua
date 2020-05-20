@@ -32,7 +32,7 @@ project "Scrapyard"
    includedirs {
       "%{prj.name}/src",
       "%{prj.name}/libs/spdlog/include",
-      "%{IncludeDir.GLFW}"
+      "%{IncludeDir.GLFW}",
    }
 
    links {
@@ -53,6 +53,13 @@ project "Scrapyard"
    
    filter "system:macosx"
       systemversion "latest"
+      kind "SharedLib"
+
+      links {
+        "Cocoa.framework",
+        "IOKit.framework",
+        "CoreFoundation.framework"
+      }
 
 project "Sandbox"
    location "Sandbox"

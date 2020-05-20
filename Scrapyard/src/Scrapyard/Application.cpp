@@ -6,7 +6,7 @@
 namespace Scrapyard {
 
     Application::Application() {
-
+        m_window = std::unique_ptr<Window>(Window::Create());
     }
 
     Application::~Application() {
@@ -14,8 +14,10 @@ namespace Scrapyard {
     }
 
     void Application::run() {
-        WindowResizeEvent e(1920, 1080);
-        SCY_TRACE(e);
+        
+        while(m_running) {
+            m_window->onUpdate();
+        }
     }
 
 }

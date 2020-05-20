@@ -70,7 +70,7 @@ filter "system:windows"
 
 filter "system:macosx"
     systemversion "latest"
-    staticruntime "On"
+    staticruntime "on"
     
     files {
         "%{prj.name}/src/cocoa_init.m",

@@ -20,7 +20,7 @@ namespace Scrapyard {
         }
 
         E_CLASS_TYPE(WindowResize)
-        E_CLASS_CATEGORY(Application)
+        E_CLASS_CATEGORY(App)
     private:
         unsigned int m_Width, m_Height;
     };
@@ -30,7 +30,7 @@ namespace Scrapyard {
             WindowCloseEvent() { }
             
             E_CLASS_TYPE(WindowClose)
-            E_CLASS_CATEGORY(Application)
+            E_CLASS_CATEGORY(App)
 
     };
 
@@ -39,7 +39,7 @@ namespace Scrapyard {
             TickEvent() { }
 
             E_CLASS_TYPE(AppTick)
-            E_CLASS_CATEGORY(Application)
+            E_CLASS_CATEGORY(App)
     };
 
     class UpdateEvent : public Event {
@@ -47,7 +47,7 @@ namespace Scrapyard {
             UpdateEvent() { }
 
             E_CLASS_TYPE(AppUpdate)
-            E_CLASS_CATEGORY(Application)
+            E_CLASS_CATEGORY(App)
     };
 
     class RenderEvent : public Event {
@@ -55,7 +55,7 @@ namespace Scrapyard {
             RenderEvent() { }
 
             E_CLASS_TYPE(AppRender)
-            E_CLASS_CATEGORY(Application)
+            E_CLASS_CATEGORY(App)
     };
 }
 

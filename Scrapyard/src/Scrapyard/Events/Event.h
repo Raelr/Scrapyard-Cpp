@@ -26,7 +26,7 @@ enum class EventType {
 // Event Category -> bitmasks.
 enum E_Category {
     None = 0,
-    Application  = BIT(0),
+    App  = BIT(0),
     Input        = BIT(1),
     Keyboard     = BIT(2),
     Mouse        = BIT(3),
