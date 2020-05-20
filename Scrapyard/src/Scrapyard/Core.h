@@ -9,6 +9,15 @@
     #endif
     #endif
 
+    #ifdef SCY_ENABLE_ASSERTS
+        #define SCY_ASSERT(x, ...) { if(!(x)) { SCY_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
+        #define SCY_CORE_ASSERT(x, ...) { if(!(x)) { SCY_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
+    #else
+        #define SCY_ASSERT(x, ...)
+        #define SCY_CORE_ASSERT(x, ...)
+    #endif
+
+    #define BIT(x) (1 << x)
+
 #endif
 
-#define BIT(x) (1 << x)

@@ -28,7 +28,7 @@ namespace Scrapyard {
 
         if (!s_GLFWInitialised) {
             int success = glfwInit();
-
+            SCY_ASSERT(success, "Failed to initialise GLFW!");
             s_GLFWInitialised = true;
         }
 
