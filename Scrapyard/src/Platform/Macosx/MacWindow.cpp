@@ -41,4 +41,22 @@ namespace Scrapyard {
     void MacWindow::shutdown() {
         glfwDestroyWindow(m_window);
     }
+
+    void MacWindow::onUpdate() {
+        glfwPollEvents();
+        glfwSwapBuffers(m_window);
+    }
+
+    void MacWindow::setVsync(bool enabled) {
+        if (enabled) {
+            glfwSwapInterval(1);
+        } else {
+            glfwSwapInterval(0);
+        }
+        m_data.isVsync = enabled;
+    }
+
+    bool MacWindow::isVsync() const {
+        return m_data.isVsync;
+    }
 }

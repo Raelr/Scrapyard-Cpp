@@ -19,7 +19,7 @@ namespace Scrapyard {
 
             inline void setEventCallback(const EventCallbackFn& callback) override { m_data.callback = callback; };
             virtual void setVsync(bool enabled) override;
-            virtual void isVsync() const override;
+            virtual bool isVsync() const override;
         private:
 
             virtual void init(const Properties& props);

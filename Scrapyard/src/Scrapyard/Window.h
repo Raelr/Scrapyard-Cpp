@@ -34,7 +34,7 @@ namespace Scrapyard {
 
             virtual void setEventCallback(const EventCallbackFn& callback) = 0;
             virtual void setVsync(bool enabled) = 0;
-            virtual void isVsync() const = 0;
+            virtual bool isVsync() const = 0;
 
             static Window* Create(const Properties& probs = Properties());
     };
