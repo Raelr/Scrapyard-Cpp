@@ -79,7 +79,6 @@ project "Sandbox"
    includedirs {
       "Scrapyard/src/",
       "Scrapyard/libs/spdlog/include",
-      "%{IncludeDir.GLFW}"
    }
 
    links {
