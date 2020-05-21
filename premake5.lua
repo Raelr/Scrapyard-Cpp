@@ -1,5 +1,6 @@
 workspace "Scrapyard-C"
    architecture "x64"
+   startproject "Sandbox"
     configurations { 
        "Debug", 
        "Release",
@@ -10,7 +11,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Scrapyard/libs/GLFW/GLFW/include"
-include "Scrapyard/libs/GLFW"
+include "Scrapyard/libs/GLFW/"
     
 project "Scrapyard"
    location "Scrapyard"
@@ -53,12 +54,12 @@ project "Scrapyard"
    
    filter "system:macosx"
       systemversion "latest"
-      kind "SharedLib"
+      staticruntime "on"
 
       links {
         "Cocoa.framework",
         "IOKit.framework",
-        "CoreFoundation.framework"
+        "CoreFoundation.framework",
       }
 
 project "Sandbox"
@@ -77,11 +78,12 @@ project "Sandbox"
 
    includedirs {
       "Scrapyard/src/",
-      "Scrapyard/libs/spdlog/include"
+      "Scrapyard/libs/spdlog/include",
+      "%{IncludeDir.GLFW}"
    }
 
    links {
-      "Scrapyard"
+      "Scrapyard",
    }
 
    filter "configurations:Debug"
@@ -90,3 +92,10 @@ project "Sandbox"
 
    filter "system:macosx"
       systemversion "latest"
+      staticruntime "on"
+
+      links {
+        "Cocoa.framework",
+        "IOKit.framework",
+        "CoreFoundation.framework",
+      }
