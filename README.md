@@ -6,13 +6,13 @@ Scrapyard is intended to be a learning exercise, it is NOT intended to be used f
  
 ## Current State:
 
-Scrapyard-C is currently in the extreme infant stages of development. Currently the focus has been on finding a build system which is simple to understand and provides the tools to build the project efficiently. The current choice for build system is [Premake](https://github.com/premake/premake-core). 
+Scrapyard-C is currently in the extreme infant stages of development. A suitable build system has been chosen ([{Premake](https://github.com/premake/premake-core)), and now the focus has moved to basic window management and cross-platform support. Scrapyard can now compile on both Windows and Mac (Windows requires the use of Visual Studio to work!). The focus now is to try and slowly integrate the windowing system on both platforms. Once both are done, the focus will shift toward Vulkan. 
 
 ## Build Guide
 
 ### MACOSX
 
-Currently Scrapyard-C is only available on MacOSX. There are two method for building the project - the manual method and the automated method. 
+Currently Scrapyard-C is compilable on both MacOSX and Windows. There are two method for building the project - the manual method and the automated method. 
 
 #### Manual
 
@@ -50,7 +50,7 @@ So for this example, the project was built to the following directory:
 
 > bin/Debug-macosx-x86_64/Sandbox
 
-Now all we need to do is run the project. To do this you can either navigate to the directory and clickon the application, or run the project from the terminal using the command:
+Now all we need to do is run the project. To do this you can either navigate to the directory and click on the application, or run the project from the terminal using the command:
 
 ```bash
 $ ./<EXECUTABLE_DIRECTORY>/Sandbox
@@ -62,7 +62,7 @@ So in our case we'd run:
 $ ./bin/Debug-macosx-x86_64/Sandbox/Sandbox
 ```
 
-You should see the follwing output: 
+You should see the following output: 
 
 ```bash
 [2020-05-17 08:58:29.433] [info] Running Scrapyard with MacOSX build
@@ -70,7 +70,7 @@ You should see the follwing output:
 ...
 ```
 
-If you see this then congratulations! You successfulyy build Scrapyard-C!
+If you see this then congratulations! You successfully built Scrapyard-C!
 
 Please note that currently the program runs a simple infinite loop to test the functionality. To exit just stop the process or use the keyboard shortcut: `^C`.
 
@@ -117,3 +117,13 @@ This should generate the project files for xcode!
 
 To find more information about Premake build configurations, please refer to their [official repository.](https://github.com/premake/premake-core/wiki/Using-Premake).
 
+### WINDOWS
+
+The recommended approach for building Scrapyard on Windows is via Visual Studio. Running the appropriate Premake command will generate the relevant project files on Visual Studio and make them available for building. The command for generating this is:
+
+```
+[From project directory]
+premake\premake5.exe vs2019
+```
+
+This should generate the appropriate Visual Studio project files. Once this has been done, simply open the project in Visual Studio and build the solution! 
