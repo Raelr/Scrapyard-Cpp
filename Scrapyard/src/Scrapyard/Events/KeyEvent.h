@@ -5,10 +5,12 @@
 
 namespace Scrapyard {
 
-    class KeyEvent {
+    class KeyEvent : public Event {
         public: 
-            inline int getKeyCode() const {return m_keyCode; }
+
+            inline int getKeyCode() const { return m_keyCode; }
             E_CLASS_CATEGORY(Keyboard | Input)
+
         protected:
             KeyEvent(int keyCode) 
                     : m_keyCode{keyCode} { }

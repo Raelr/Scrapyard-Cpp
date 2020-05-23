@@ -3,6 +3,7 @@
 
 // Event includes
 #include "Scrapyard/Events/AppEvent.h"
+#include "Scrapyard/Events/KeyEvent.h"
 
 namespace Scrapyard {
 
@@ -55,6 +56,7 @@ namespace Scrapyard {
             data.callback(event);
         });
 
+        // Window Close event.
         glfwSetWindowCloseCallback(m_window, [](GLFWwindow* window) {
             
             Data& data = *(Data*)glfwGetWindowUserPointer(window);
@@ -62,6 +64,8 @@ namespace Scrapyard {
             WindowCloseEvent event;
             data.callback(event);
         });
+
+
     }
 
     void WindowsWindow::shutdown() {
