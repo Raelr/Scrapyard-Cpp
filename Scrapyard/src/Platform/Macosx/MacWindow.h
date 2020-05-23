@@ -38,7 +38,6 @@ namespace Scrapyard {
 
             Data m_data;
     };
-
 }
 
 #endif

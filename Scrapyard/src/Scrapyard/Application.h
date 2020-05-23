@@ -22,7 +22,4 @@ namespace Scrapyard {
     Application* CreateApplication();
 }
 
-
-
-
 #endif
