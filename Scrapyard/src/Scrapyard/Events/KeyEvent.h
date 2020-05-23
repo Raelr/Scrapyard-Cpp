@@ -22,7 +22,7 @@ namespace Scrapyard {
             
             inline int getRepeatCount() const { return m_repeatCount; }
 
-            std::string toString const override {
+            std::string toString() const override {
                 std::stringstream ss; 
                 ss << "KeyPressedEvent: " << m_keyCode << " ( " << m_repeatCount << " repeats)";
                 return ss.str();

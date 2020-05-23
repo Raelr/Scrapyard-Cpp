@@ -1,6 +1,9 @@
 #include "scypch.h"
 #include "WindowsWindow.h"
 
+// Event includes
+#include "Scrapyard/Events/AppEvent.h"
+
 namespace Scrapyard {
 
     static bool s_GLFWInitialised = false;
@@ -32,8 +35,6 @@ namespace Scrapyard {
             s_GLFWInitialised = true;
         }
 
-        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-
         m_window = glfwCreateWindow((int)props.width, (int)props.height, props.title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_window);
         glfwSetWindowUserPointer(m_window, &m_data);
@@ -42,7 +43,17 @@ namespace Scrapyard {
 
         // GLFW Event Callbacks
 
+        // Window Resize event. 
+        glfwSetWindowSizeCallback(m_window, [](GLFWwindow* window, int width, int height) {
+            
+            Data& data = *(Data*)glfwGetWindowUserPointer(window);
 
+            data.height = height;
+            data.width = width;
+
+            WindowResizeEvent event(width, height);
+            data.callback(event);
+        });
     }
 
     void WindowsWindow::shutdown() {
