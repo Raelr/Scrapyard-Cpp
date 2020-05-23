@@ -54,6 +54,14 @@ namespace Scrapyard {
             WindowResizeEvent event(width, height);
             data.callback(event);
         });
+
+        glfwSetWindowCloseCallback(m_window, [](GLFWwindow* window) {
+            
+            Data& data = *(Data*)glfwGetWindowUserPointer(window);
+
+            WindowCloseEvent event;
+            data.callback(event);
+        });
     }
 
     void WindowsWindow::shutdown() {
