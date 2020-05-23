@@ -32,11 +32,17 @@ namespace Scrapyard {
             s_GLFWInitialised = true;
         }
 
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+
         m_window = glfwCreateWindow((int)props.width, (int)props.height, props.title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_window);
         glfwSetWindowUserPointer(m_window, &m_data);
 
         setVsync(true);
+
+        // GLFW Event Callbacks
+
+
     }
 
     void WindowsWindow::shutdown() {
