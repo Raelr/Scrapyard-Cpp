@@ -13,7 +13,7 @@ public:
 };
 
 
-Scrapyard::Application * Scrapyard::CreateApplication() {
+Scrapyard::Application* Scrapyard::CreateApplication() {
     return new SandBoxApp();
 }
 
