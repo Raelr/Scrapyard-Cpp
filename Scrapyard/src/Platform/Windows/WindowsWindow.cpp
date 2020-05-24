@@ -95,6 +95,7 @@ namespace Scrapyard {
             }
         });
 
+        // Mouse Button Events
         glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods) {
             
             Data& data = *(Data*)glfwGetWindowUserPointer(window);
@@ -103,15 +104,26 @@ namespace Scrapyard {
             {
                 case GLFW_PRESS: {
                     MouseButtonPressedEvent event(button);
+                    // Calls onEvent() in application (since it was bound in application constructor)
                     data.callback(event);
                     break;
                 }
                 case GLFW_RELEASE: {
                     MouseButtonReleasedEvent event(button);
+                    // Calls onEvent() in application (since it was bound in application constructor)
                     data.callback(event);
                     break;
                 }
             }
+        });
+
+        // Mouse Scroll event
+        glfwSetScrollCallback(m_window, [](GLFWwindow* window, double xOffset, double yOffset) {
+
+            Data& data = *(Data*)glfwGetWindowUserPointer(window);
+            
+            MouseScrolledEvent event(xOffset, yOffset);
+            data.callback(event);
         });
     }
 
