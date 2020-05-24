@@ -53,6 +53,7 @@ namespace Scrapyard {
             data.width = width;
 
             WindowResizeEvent event(width, height);
+            // Calls onEvent() in application (since it was bound in application constructor)
             data.callback(event);
         });
 
@@ -62,10 +63,36 @@ namespace Scrapyard {
             Data& data = *(Data*)glfwGetWindowUserPointer(window);
 
             WindowCloseEvent event;
+            // Calls onEvent() in application (since it was bound in application constructor)
             data.callback(event);
         });
 
-
+        // Set Key Callbacks for GLFW
+        glfwSetKeyCallback(m_window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+            
+            Data& data = *(Data*)glfwGetWindowUserPointer(window);
+            
+            switch (action) {
+                case GLFW_PRESS: {
+                    KeyPressedEvent event(key, 0);
+                    // Calls onEvent() in application (since it was bound in application constructor)
+                    data.callback(event);
+                    break;
+                }
+                case GLFW_RELEASE: {
+                    KeyReleasedEvent event(key);
+                    // Calls onEvent() in application (since it was bound in application constructor)
+                    data.callback(event);
+                    break;
+                }
+                case GLFW_REPEAT: {
+                    KeyPressedEvent event(key, 1);
+                    // Calls onEvent() in application (since it was bound in application constructor)
+                    data.callback(event);
+                    break;
+                }
+            }
+        });
     }
 
     void WindowsWindow::shutdown() {
