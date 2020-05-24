@@ -14,8 +14,8 @@ namespace Scrapyard {
         return new WindowsWindow(props);
     }
 
-    static void GLFWErrorCallback() {
-
+    static void GLFWErrorCallback(int error, const char* description) {
+        SCY_CORE_ERROR("GLFW Error: ({0}): {1}", error, description);
     }
 
     WindowsWindow::WindowsWindow(const Properties& props) {
@@ -38,8 +38,8 @@ namespace Scrapyard {
         if (!s_GLFWInitialised) {
             int success = glfwInit();
             SCY_ASSERT(success, "Failed to initialise GLFW!");
-            glfwSetErrorCallback()
             s_GLFWInitialised = true;
+            glfwSetErrorCallback(GLFWErrorCallback);
         }
 
         m_window = glfwCreateWindow((int)props.width, (int)props.height, props.title.c_str(), nullptr, nullptr);
