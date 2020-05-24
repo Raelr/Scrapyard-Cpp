@@ -4,6 +4,7 @@
 // Event includes
 #include "Scrapyard/Events/AppEvent.h"
 #include "Scrapyard/Events/KeyEvent.h"
+#include "Scrapyard/Events/MouseEvent.h"
 
 namespace Scrapyard {
 
@@ -92,6 +93,11 @@ namespace Scrapyard {
                     break;
                 }
             }
+        });
+
+        glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods) {
+            
+
         });
     }
 

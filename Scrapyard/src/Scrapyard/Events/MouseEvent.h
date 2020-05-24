@@ -6,45 +6,45 @@
 namespace Scrapyard {
 
     class MouseMovedEvent : public Event {
+        
         public:
             MouseMovedEvent(float x, float y) 
-                    : m_MouseX{x}, m_MouseY{y} { }
+                : m_mouseX{ x }, m_mouseY{ y } {}
             
-            inline float getX const { return m_MouseX; }
-            inline float getY const { return m_MouseY; }
+            float getX() const { return m_mouseX; }
+            float getY() const { return m_mouseY; }
 
             std::string toString() const override {
                 std::stringstream ss;
-                ss << "MouseMovedEvent: " << m_MouseX << ", " << m_MouseY;
+                ss << "MouseMovedEvent: " << m_mouseX << ", " << m_mouseY;
                 return ss.str();
             }
 
             E_CLASS_TYPE(MouseMoved)
             E_CLASS_CATEGORY(Mouse | Input)
-
         private:
-            float m_MouseX, m_MouseY;
+            float m_mouseX, m_mouseY;
     };
 
     class MouseScrolledEvent : public Event {
         public: 
             MouseScrolledEvent(float xOffset, float yOffset) 
-                    : m_XOffset(xOffset), m_YOffset(yOffset) { }
+                    : m_xOffset(xOffset), m_yOffset(yOffset) { }
                         
-            inline float getXOffset const { return m_XOffset; }
-            inline float getYOffset const { return m_yOffset; }
+            inline float getXOffset() const { return m_xOffset; }
+            inline float getYOffset() const { return m_yOffset; }
 
             std::string toString() const override {
                 std::stringstream ss;
-                ss << "MouseScrolledEvent: " << getXOffset() << ", " << GetYOffset();
+                ss << "MouseScrolledEvent: " << getXOffset() << ", " << getYOffset();
                 return ss.str();
             }
 
-            E_CLASS_TYPE(MouseScrolled)
+            E_CLASS_TYPE(MouseScroll)
             E_CLASS_CATEGORY(Mouse | Input)
 
         private: 
-            float m_XOffset, m_yOffset;
+            float m_xOffset, m_yOffset;
     };
 
     class MouseButtonEvent : public Event {
