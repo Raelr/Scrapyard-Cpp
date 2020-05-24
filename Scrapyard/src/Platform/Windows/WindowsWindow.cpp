@@ -14,6 +14,10 @@ namespace Scrapyard {
         return new WindowsWindow(props);
     }
 
+    static void GLFWErrorCallback() {
+
+    }
+
     WindowsWindow::WindowsWindow(const Properties& props) {
         init(props);
     }
@@ -34,6 +38,7 @@ namespace Scrapyard {
         if (!s_GLFWInitialised) {
             int success = glfwInit();
             SCY_ASSERT(success, "Failed to initialise GLFW!");
+            glfwSetErrorCallback()
             s_GLFWInitialised = true;
         }
 
@@ -43,7 +48,7 @@ namespace Scrapyard {
 
         setVsync(true);
 
-        // GLFW Event Callbacks
+        // ---------------- GLFW Event Callbacks --------------------------------------------------------------
 
         // Window Resize event. 
         glfwSetWindowSizeCallback(m_window, [](GLFWwindow* window, int width, int height) {
@@ -123,6 +128,16 @@ namespace Scrapyard {
             Data& data = *(Data*)glfwGetWindowUserPointer(window);
             
             MouseScrolledEvent event(xOffset, yOffset);
+            // Calls onEvent() in application (since it was bound in application constructor)
+            data.callback(event);
+        });
+
+        // Mouse position Callback
+        glfwSetCursorPosCallback(m_window, [](GLFWwindow* window, double xPos, double yPos) {
+            Data& data = *(Data*)glfwGetWindowUserPointer(window);
+
+            MouseMovedEvent event(xPos, yPos);
+            // Calls onEvent() in application (since it was bound in application constructor)
             data.callback(event);
         });
     }
