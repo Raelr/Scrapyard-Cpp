@@ -97,4 +97,5 @@ project "Sandbox"
         "Cocoa.framework",
         "IOKit.framework",
         "CoreFoundation.framework",
+        "GLFW"
       }
