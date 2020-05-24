@@ -49,7 +49,7 @@ namespace Scrapyard {
 
     class MouseButtonEvent : public Event {
         public:
-            inline int GetMouseButton() const { return m_Button; }
+            inline int getMouseButton() const { return m_Button; }
 
             E_CLASS_CATEGORY(Mouse | Input)
         protected:

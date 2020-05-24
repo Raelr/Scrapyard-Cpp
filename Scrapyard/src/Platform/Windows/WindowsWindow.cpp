@@ -97,7 +97,21 @@ namespace Scrapyard {
 
         glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods) {
             
+            Data& data = *(Data*)glfwGetWindowUserPointer(window);
 
+            switch (action)
+            {
+                case GLFW_PRESS: {
+                    MouseButtonPressedEvent event(button);
+                    data.callback(event);
+                    break;
+                }
+                case GLFW_RELEASE: {
+                    MouseButtonReleasedEvent event(button);
+                    data.callback(event);
+                    break;
+                }
+            }
         });
     }
 
