@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     
     app->run();
 
-    SCY_INFO("Scrapyard is running!");
+    SCY_INFO("Shutting Scrapyard down!");
     
     delete app;
 
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
 
     app->run();
 
-    SCY_INFO("Scrapyard is running!");
+    SCY_INFO("Shutting Scrapyard down!");
 
     delete app;
 

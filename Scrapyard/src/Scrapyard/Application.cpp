@@ -18,7 +18,10 @@ namespace Scrapyard {
     }
 
     void Application::onEvent(Event& e) {
-        SCY_CORE_INFO("{0}", e);
+
+        EventDispatcher dispatcher(e);
+        dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(onWindowClose));
+        SCY_CORE_TRACE("{0}", e);
     }
 
     void Application::run() {
@@ -26,6 +29,11 @@ namespace Scrapyard {
         while(m_running) {
             m_window->onUpdate();
         }
+    }
+
+    bool Application::onWindowClose(WindowCloseEvent& e) {
+        m_running = false;
+        return true;
     }
 
 }

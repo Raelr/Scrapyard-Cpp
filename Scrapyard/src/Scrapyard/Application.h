@@ -4,6 +4,7 @@
 #include "Core.h"
 #include "scypch.h"
 #include "Events/Event.h"
+#include "Events/AppEvent.h"
 #include "Window.h"
 
 namespace Scrapyard {
@@ -16,6 +17,7 @@ namespace Scrapyard {
         void run();
         void onEvent(Event& e);
     private:
+        bool onWindowClose(WindowCloseEvent& e);
         std::unique_ptr<Window> m_window;
         bool m_running = true;
     };
