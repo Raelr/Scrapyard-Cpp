@@ -16,6 +16,7 @@ int main(int argc, char** argv) {
     auto* app = Scrapyard::CreateApplication();
 
     //auto* window = Scrapyard::initWindow();
+    //Scrapyard::setVsync(window, true);
     
     SCY_CORE_INFO("Running Scrapyard...");
 

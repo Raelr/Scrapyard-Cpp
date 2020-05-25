@@ -26,6 +26,8 @@ namespace Scrapyard {
     void updateWindow(MacWindow*);
 
     void destroyWindow(MacWindow*);
+
+    void setVsync(MacWindow*, bool);
 }
 
 #endif

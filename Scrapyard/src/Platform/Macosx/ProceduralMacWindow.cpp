@@ -49,4 +49,13 @@ namespace Scrapyard {
     void destroyWindow(MacWindow* window) {
         glfwDestroyWindow(window->window);
     }
+
+    void setVsync(MacWindow* window, bool enabled) {
+        if (enabled) {
+            glfwSwapInterval(1);
+        } else {
+            glfwSwapInterval(0);
+        }
+        window->data.isVsync = enabled;
+    }
 }
