@@ -1,6 +1,7 @@
 #ifndef ENTRYPOINT_H
 #define ENTRYPOINT_H
 #include "Core.h"
+#include "Platform/Macosx/ProceduralMacWindow.h"
 
 #ifdef SCY_PLATFORM_MACOS
 
@@ -13,13 +14,21 @@ int main(int argc, char** argv) {
     SCY_CORE_TRACE("Starting Scrapyard...");
     
     auto* app = Scrapyard::CreateApplication();
+
+    //auto* window = Scrapyard::initWindow();
     
     SCY_CORE_INFO("Running Scrapyard...");
+
+    //while (true) {
+    //    Scrapyard::updateWindow(window);
+    //}
     
     app->run();
 
     SCY_INFO("Shutting Scrapyard down!");
     
+    //Scrapyard::destroyWindow(window);
+    //delete window;
     delete app;
 
     return 0;

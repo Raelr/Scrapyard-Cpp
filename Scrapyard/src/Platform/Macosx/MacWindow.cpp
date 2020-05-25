@@ -14,6 +14,10 @@ namespace Scrapyard {
         return new MacWindow(props);
     }
 
+    static void GLFWErrorCallback(int error, const char* description) {
+        SCY_CORE_ERROR("GLFW Error: ({0}): {1}", error, description);
+    }
+
     MacWindow::MacWindow(const Properties& props) {
         init(props);
     }
