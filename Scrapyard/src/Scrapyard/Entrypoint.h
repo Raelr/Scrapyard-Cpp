@@ -16,20 +16,18 @@ int main(int argc, char** argv) {
     auto* app = Scrapyard::CreateApplication();
 
     //auto* window = Scrapyard::initWindow();
-    //Scrapyard::setVsync(window, true);
     
     SCY_CORE_INFO("Running Scrapyard...");
 
-    //while (true) {
-    //    Scrapyard::updateWindow(window);
-    //}
-    
+    // while (Scrapyard::isActive(window)) {
+    //    Scrapyard::updateWindow(window->window);
+    // }
     app->run();
 
     SCY_INFO("Shutting Scrapyard down!");
     
-    //Scrapyard::destroyWindow(window);
-    //delete window;
+    // Scrapyard::destroyWindow(window);
+    // delete window;
     delete app;
 
     return 0;

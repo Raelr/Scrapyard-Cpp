@@ -1,3 +1,9 @@
+/*
+    NOTE: This is a test class to see how you could achieve a window through a procedural
+    interface. The goal will be to try and learn how these features could be built using
+    both OOP and procedural. 
+*/
+
 #include "scypch.h"
 #include "ProceduralMacWindow.h"
 
@@ -15,14 +21,11 @@ namespace Scrapyard {
 
     MacWindow* initWindow(std::string title, int width, int height) {
         
-        MacWindow* window = new MacWindow;
         WindowData data;
 
         data.title = title;
         data.width = width;
         data.height = height;
-
-        window->data = data; 
 
         SCY_CORE_INFO("Creating Windows window {0} ({1}, {2})", data.title, data.width, data.height);
 
@@ -33,21 +36,39 @@ namespace Scrapyard {
             glfwSetErrorCallback(GLFWErrorCallback);
         }
 
-        window->window = glfwCreateWindow((int)data.width, (int)data.height, data.title.c_str(), nullptr, nullptr);
-        glfwMakeContextCurrent(window->window);
-        glfwSetWindowUserPointer(window->window, &window->data);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 
-        //setVsync(true);
+        GLFWwindow* win = glfwCreateWindow((int)data.width, (int)data.height, data.title.c_str(), nullptr, nullptr);
+        
+        MacWindow* window = new MacWindow(data, win);
+        
+        glfwSetWindowUserPointer(win, &window->data);
+
+        // Window Close event.
+        glfwSetWindowCloseCallback(win, [](GLFWwindow* window) {
+            
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+            SCY_CORE_INFO("CLOSING SCRAPYARD...");
+
+            data.isActive = false;
+        });
+
         return window;
     }
 
-    void updateWindow(MacWindow* window) {
+    void updateWindow(GLFWwindow* window) {
         glfwPollEvents();
-        glfwSwapBuffers(window->window);
     }
 
     void destroyWindow(MacWindow* window) {
         glfwDestroyWindow(window->window);
+    }
+
+    bool isActive(MacWindow* window) {
+        return window->data.isActive;
     }
 
     void setVsync(MacWindow* window, bool enabled) {
