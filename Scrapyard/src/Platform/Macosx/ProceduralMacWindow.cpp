@@ -67,8 +67,8 @@ namespace Scrapyard {
         glfwDestroyWindow(window->window);
     }
 
-    bool isActive(MacWindow* window) {
-        return window->data.isActive;
+    bool isActive(WindowData data) {
+        return data.isActive;
     }
 
     void setVsync(MacWindow* window, bool enabled) {

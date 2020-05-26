@@ -35,11 +35,11 @@ namespace Scrapyard {
 
     void updateWindow(GLFWwindow*);
 
-    void destroyWindow(MacWindow*);
+    void destroyWindow(MacWindow* window);
 
     void setVsync(MacWindow*, bool);
 
-    bool isActive(MacWindow* window);
+    bool isActive(WindowData data);
 }
 
 #endif
